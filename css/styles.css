@@ -1,47 +1,49 @@
 :root {
-	--bg: #0f172a;
-	--surface: #111827;
-	--text: #e5e7eb;
-	--muted: #94a3b8;
-	--accent: #38bdf8;
-	--accent-dark: #0284c7;
-	--border: #1f2937;
-	--max-width: 1100px;
-	--font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --bg: #0f172a;
+  --surface: #111827;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --accent-dark: #0284c7;
+  --border: #1f2937;
+  --max-width: 1100px;
+  --font-main:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
 }
 
 body {
-	margin: 0;
-	background-color: var(--bg);
-	color: var(--text);
-	font-family: var(--font-main);
-	line-height: 1.6;
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-main);
+  line-height: 1.6;
 }
 
 .site-header {
-	position: sticky;
-	top: 0;
-	background-color: var(--bg);
-	border-bottom: 1px solid var(--border);
-	z-index: 10;
+  position: sticky;
+  top: 0;
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--border);
+  z-index: 10;
 }
 
-.navbar{
-	min-height: 4rem;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+.navbar {
+  min-height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .site-logo {
-	color: var(--text);
-	font-weight: 700;
-	text-decoration: none;
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .nav-links {
-	display: flex;
-	gap: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
 }
 
 .nav-links a {
@@ -59,23 +61,24 @@ body {
 }
 
 .section-heading {
-	max-width: 800px;
-	margin-bottom: 2.5rem;
+  max-width: 800px;
+  margin-bottom: 2.5rem;
 }
 
 .section-heading h2 {
-	font-size: clamp(2.25rem, 4vw, 3.5rem);
-	line-height: 1.1;
-	margin: 0;
-	color: var(--text);
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  line-height: 1.1;
+  margin: 0;
+  color: var(--text);
 }
 
+/* Front page */
 .hero-section {
   min-height: calc(100vh - 4rem);
   display: flex;
   align-items: center;
-	position: relative;
-	overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-section h1 {
@@ -89,21 +92,82 @@ body {
   font-size: 1.25rem;
 }
 
+.hero-name-link {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.hero-name-link:hover,
+.hero-name-link:focus {
+  color: var(--accent);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.resume-link,
+.secondary-link {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.8rem 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform 0.2 ease,
+    border-color 0.2s ease,
+    background-color 0.2 ease;
+}
+
+.resume-link {
+  color: var(--bg);
+  background-color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.secondary-link {
+  color: var(--accent);
+  background-color: transparent;
+  border: 1px solid var(--border);
+}
+
+.resume-link:hover,
+.resume-link:focus,
+.secondary-link:hover,
+.secondary-link:focus {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.resume-link:hover,
+.resume-link:focus {
+  background-color: var(--accent-dark);
+}
+
+.secondary-link:hover,
+.secondary-link:focus {
+  color: var(--text);
+}
+
+/* About Section */
 .about-grid {
-	display: grid;
-	grid-template-columns: 1.5fr 1fr;
-	gap: 2rem;
-	align-items: start;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+  align-items: start;
 }
 
 .about-text {
-	color: var(--muted);
-	font-size: 1.05rem;
-	max-width: 700px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 700px;
 }
 
 .about-text p {
-	margin-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 .about-cards {
@@ -123,10 +187,10 @@ body {
   justify-content: center;
 }
 
-.info-card h3{
-	margin: 0 0 0.75rem;
-	color: var(--text);
-	font-size: 1.5rem;
+.info-card h3 {
+  margin: 0 0 0.75rem;
+  color: var(--text);
+  font-size: 1.5rem;
 }
 
 .info-card p {
@@ -134,6 +198,7 @@ body {
   color: var(--muted);
 }
 
+/* Previous Experience Section */
 .work-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -151,7 +216,9 @@ body {
   border: 1px solid var(--border);
   border-radius: 1.25rem;
   padding: 1.5rem;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .work-card:hover {
@@ -228,6 +295,7 @@ body {
   }
 }
 
+/* Projects section */
 .project-filters {
   display: flex;
   flex-wrap: wrap;
@@ -243,7 +311,10 @@ body {
   padding: 0.55rem 1rem;
   font: inherit;
   cursor: pointer;
-  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .filter-btn:hover,
@@ -272,7 +343,9 @@ body {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .project-card:hover {
@@ -345,51 +418,51 @@ body {
 /* Contact Section */
 
 .contact-grid {
-	display: grid;
-	grid-template-columns: 1fr 1.25fr;
-	gap: 2rem;
-	align-items: start;
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 2rem;
+  align-items: start;
 }
 
 .contact-info {
-	color: var(--muted);
-	font-size: 1.05rem;
+  color: var(--muted);
+  font-size: 1.05rem;
 }
 
 .contact-links {
-	display: flex;
-	flex-direction: column;
-	gap: 0.75rem;
-	margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
 }
 
 .contact-links a {
-	color: var(--accent);
-	font-weight: 700;
-	text-decoration: none;
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .contact-links a:hover,
 .contact-links a:focus {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 .contact-form {
-	background-color: var(--surface);
-	border: 1px solid var(--border);
-	border-radius: 1.25rem;
-	padding: 1.5rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
 }
 
 .form-group {
-	margin-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 .form-group label {
-	display: block;
-	color: var(--text);
-	font-weight: 700;
-	margin-bottom: 0.5rem;
+  display: block;
+  color: var(--text);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
 .form-group input,
@@ -405,28 +478,30 @@ body {
 
 .form-group input:focus,
 .form-group textarea:focus {
-	outline: 2px solid var(--accent);
-	border-color: var(--accent);
+  outline: 2px solid var(--accent);
+  border-color: var(--accent);
 }
 
 .error-message {
-	display: block;
-	min-height: 1.2rem;
-	color: #fca5a5;
-	font-size: 0.85rem;
-	margin-top: 0.35rem;
+  display: block;
+  min-height: 1.2rem;
+  color: #fca5a5;
+  font-size: 0.85rem;
+  margin-top: 0.35rem;
 }
 
 .btn-submit {
-	color: var(--bg);
-	background-color: var(--accent);
-	border: none;
-	border-radius: 999px;
-	padding: 0.8rem 1.25rem;
-	font: inherit;
-	font-weight: 700;
-	cursor: pointer;
-	transition: transform 0.2s ease, background-color 0.2s ease;
+  color: var(--bg);
+  background-color: var(--accent);
+  border: none;
+  border-radius: 999px;
+  padding: 0.8rem 1.25rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .btn-submit:hover,
@@ -447,8 +522,3 @@ body {
     grid-template-columns: 1fr;
   }
 }
-
-
-
-
-	
