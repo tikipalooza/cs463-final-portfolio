@@ -74,6 +74,8 @@ body {
   min-height: calc(100vh - 4rem);
   display: flex;
   align-items: center;
+	position: relative;
+	overflow: hidden;
 }
 
 .hero-section h1 {
@@ -134,8 +136,14 @@ body {
 
 .work-grid {
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-top: 2rem;
+}
+
+.featured-work {
+  grid-column: 1 / -1;
+  border-color: var(--accent);
 }
 
 .work-card {
@@ -143,6 +151,12 @@ body {
   border: 1px solid var(--border);
   border-radius: 1.25rem;
   padding: 1.5rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
 }
 
 .featured-work {
